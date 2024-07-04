@@ -1,0 +1,29 @@
+class Solution{
+public:
+    string findLargest(int N, int S){
+        // code here
+        if(S>N*9)
+        {
+            return "-1";
+        }
+        if(S==0 && N>1)//if sum 0 but place given 2 or more
+        {
+            return "-1";
+        }
+        string ans="";
+    
+        for(int i=0;i<N;i++)
+        {
+            if(S>9)
+            {
+                ans=ans+'9';
+                S=S-9;
+            }
+            else
+            {
+                ans=ans+(char)('0'+S);
+                S=0;
+            }
+        }
+        return ans;
+    }
