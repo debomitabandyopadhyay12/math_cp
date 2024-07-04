@@ -1,0 +1,72 @@
+#include <bits/stdc++.h> 
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+using namespace std;
+vector<int> countEvenOdd(vector<int> &arr, int n)
+{
+
+	// vector<int>ans;
+	// int eventime=0;
+	// int oddtime=0;
+	// for(int i=0;i<n;i++)
+	// {
+
+	// 	//int p=arr[i];
+	// 	if(arr[i] !=-1)
+	// 	{
+	// 	int count=1;
+	// 	for(int j=i+1;j<n;j++)
+	// 	{
+	// 		if(arr[j]==arr[i])
+	// 		count++;
+	// 		arr[j]=-1;
+	// 	}
+	// 	}
+	// 	if(count%2==0)
+	// 	{
+	// 		eventime+=1;
+	// 	}
+	// 	else{
+	// 		oddtime+=1;
+	// 	}
+
+	// 	// while (i  < n-1 && arr[i] == arr[i + 1])
+    //     // {
+    //     //     i++;
+    //     // }
+
+	// }
+	
+	// ans.push_back(oddtime);
+	// ans.push_back(eventime);
+	// return ans;
+
+	// 
+	
+
+	 vector<int> ans(2, 0); // Initialize ans vector to store odd and even counts
+    unordered_map<int, int> countMap; // Map to count occurrences of each element
+
+    // Count occurrences of each element
+    for (int i = 0; i < n; ++i)
+    {
+        countMap[arr[i]]++;
+    }
+
+    // Determine even and odd counts based on occurrences
+    for (auto &pair : countMap)
+    {
+        if (pair.second % 2 == 0)
+        {
+            ++ans[1]; // Increment even count at index 1
+        }
+        else
+        {
+            ++ans[0]; // Increment odd count at index 0
+        }
+    }
+
+    return ans;
+
+}
