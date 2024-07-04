@@ -1,0 +1,25 @@
+bool checkDivisor(int x, int n){
+        int cnt=0;
+        for(int i=1; i<=sqrt(x); i++) {
+            if(x%i==0){
+                cnt++;
+                if(i!=x/i) cnt++;
+            }
+        }
+        
+        if(cnt==n) return true;
+        else return false;
+    }
+
+    
+class Solution{
+public:
+    int i;
+    int count(int A,int B,int N){ 
+        int cnt=0;
+        for(int i=A; i<=B; i++) 
+        if(checkDivisor(i,N)) cnt++;
+        return cnt;
+   }
+    
+    
