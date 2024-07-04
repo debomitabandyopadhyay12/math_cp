@@ -1,0 +1,25 @@
+#include <bits/stdc++.h> 
+vector<int> addOneToNumber(vector<int> arr)
+{
+//add 1 to the last element
+    int len=arr.size();
+    arr[len-1]=arr[len-1]+1;
+//handle the carray
+    for (int i = len - 1; i > 0; --i) {
+        if (arr[i] == 10) {
+            arr[i] = 0;
+            arr[i - 1] += 1;
+        }
+//maintain if the first index is 10
+        if (arr[0] == 10) {
+        arr[0] = 0;
+        arr.insert(arr.begin(), 1);
+    }
+//Input array can contain leading zeros, but the output array should not contain any leading zeros 
+        if (len != 1 && arr[0] == 0) {
+            arr.erase(arr.begin());
+        }
+        
+    }
+    return arr;
+}
