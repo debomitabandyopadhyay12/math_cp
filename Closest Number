@@ -1,0 +1,20 @@
+int closestNumber(int n , int m) {
+        if(n%m==0) return n;
+        
+        int p=n;
+        int q=n;
+        while(true)
+        {
+            if(p % m==0)
+            {
+                return p;
+            }
+            p--;
+            if(q% m ==0 )
+            {
+                return q;
+            }
+            q++;
+        }
+        
+    }
