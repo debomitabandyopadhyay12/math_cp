@@ -1,0 +1,17 @@
+void toBinary(int n)
+{
+    int arr[50];
+    int p,i=0;
+    while(n>0)
+    {
+        arr[i]=n%2;
+        n=n/2;
+        i++;
+    }
+    for(int j=i-1;j>=0;j--)
+    {
+        cout<<arr[j];
+    }
+    
+        
+}
