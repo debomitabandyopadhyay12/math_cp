@@ -1,0 +1,48 @@
+// C++ program to find the prime numbers
+// between a given interval
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isPrime(int n) {
+
+    if (n <= 1)
+        return false;
+
+    for (int i = 2; i < n; i++) {
+        if (n % i == 0)
+            return false;
+    }
+
+    return true;
+}
+
+// Function to find all prime numbers in the range [m, n]
+vector<int> primeRange(int m, int n) {
+
+    // Initialize a vector to store prime numbers
+    vector<int> ans;
+
+    // Iterate over each number in the range [m, n]
+    for (int i = m; i <= n; i++) {
+
+        // Check if the current number is prime
+        if (isPrime(i))
+
+            ans.push_back(i);
+    }
+
+    return ans;
+}
+
+int main() {
+
+    int m = 1, n = 10;
+
+    vector<int> ans = primeRange(m, n);
+
+    for (auto &i : ans)
+        cout << i << " ";
+
+    return 0;
+}
