@@ -1,0 +1,44 @@
+class Solution {
+  public:
+    int gcd(int a, int b) {
+        // int gcd1=1;
+        // int n=min(a,b);
+        //approach 1=brute force
+        // int m=max(a,b);
+        // if(m==1) return 1;
+        
+        
+        // for(int i=2;i<=n;i++)
+        // {
+        //     if(a%i==0 && b%i==0)
+        //     {
+        //         gcd1=i;
+        //     }
+        // }
+        
+        
+        //approach 2 =better
+        // for(int i=n;i>=1;i--)
+        //  if(a%i==0 && b%i==0)
+        //      {
+        
+        //         return i;
+        //       }
+        //       return 1;
+        
+        ////approach 3-Optimized Subtraction Euclidean by modulo
+        while(a>0 && b>0)
+        {
+            if(a>b)
+            a=a%b;
+            
+            else if(b>a)
+            b=b%a;
+        }
+        if(a==0)
+        return b;
+        else return a;
+        
+        
+    }
+};
